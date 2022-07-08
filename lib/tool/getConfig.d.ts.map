@@ -1,0 +1,1 @@
+{"version":3,"file":"getConfig.d.ts","sourceRoot":"","sources":["../../src/tool/getConfig.ts"],"names":[],"mappings":"AAIA,cAAM,SAAS;IACb,OAAO,CAAC,IAAI,CAAqC;IAEjD,OAAO,CAAC,QAAQ;IAGT,WAAW,CAAC,QAAQ,EAAE,MAAM,GAAG,GAAG;CAG1C;AAED,eAAe,SAAS,CAAC"}
