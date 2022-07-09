@@ -1,12 +1,11 @@
 declare class Message {
-    private channelList;
+    private channelID;
     private config;
     private server;
     private client;
-    constructor(channelList?: Array<number>);
+    constructor(channelID: number);
     static addListener(callback: (data: any) => void): void;
-    sendMessage(content: string): void;
-    addChannelID(channelID: number): void;
+    sendMessage(content: string): Promise<void>;
 }
 export default Message;
-//# sourceMappingURL=Message.d.ts.map
+//# sourceMappingURL=message.d.ts.map

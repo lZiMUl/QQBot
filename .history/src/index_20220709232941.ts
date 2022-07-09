@@ -23,6 +23,7 @@ cmd.addCommandListener("绑定该频道", (_item, _length, root) => {
   });
 });
 
+
 cmd.catch(log);
 Message.addListener(({ eventType, msg }) => {
   console.log(msg);
