@@ -1,26 +1,30 @@
-import Message from "./tool/Message";
-import Controller from "./tool/controller";
+import Message from "./tool/messgae.js";
+import Controller from "./tool/controller.js";
+import Command from "./tool/command";
+import { log } from "console";
+
+const cmd = new Command();
 
 const channel: Array<number> = [];
 let message = new Message(channel);
 const controller = new Controller();
 
 try {
+  cmd.addCommandListener("绑定该频道", (_item, _length, root) => {
+    message.addChannelID(new Number(root?.channel_id).valueOf());
+    message.sendMessage(`绑定成功, 当前频道号为 [${root?.channel_id}]`);
+  });
+  cmd.addCommandListener("发送消息", (item, length) => {
+    message.sendMessage("发送成功");
+    log(item, length);
+  });
+  cmd.catch(log);
   Message.addListener(({ eventType, msg }) => {
     console.log(msg);
     switch (eventType) {
       case "AT_MESSAGE_CREATE":
-        if (!Controller.CheckAdmin(msg.author.username)) {
-          let data: Array<string> = msg.content.replace(new RegExp('<@![0-9]*> '), '').split(' ');
-	  if (data[0] === '/绑定该频道') {
-	      message.addChannelID(new Number(msg.channel_id).valueOf());
-	      message.sendMessage(`绑定成功, 当前频道号为 [${msg.channel_id}]`);
-	  } else if (data[0] === '/发送消息') {
-		  message.sendMessage('发送成功');
-	  }else {
-	      if (data.indexOf('/') === -1) message.sendMessage('发送成功');
-              else message.sendMessage('未知命令, 请详细阅读使用手册');
-          }
+        if (true) {
+          cmd.commandStream(msg);
           controller;
         }
         break;

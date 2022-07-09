@@ -29,9 +29,10 @@ class Message {
   }
 
   public sendMessage(content: string): void {
-    this.channelList.forEach(async (item) => {
+    Array.from(new Set(this.channelList))
+    .forEach(async (item, _b, arr) => {
       try {
-	console.log(this.channelList)
+        console.log(arr);
         await this.client.messageApi.postMessage(item, {
           content,
         });
@@ -42,8 +43,7 @@ class Message {
   }
 
   public addChannelID(channelID: number): void {
-    if (!(new String(channelID).valueOf() in this.channelList))
-      this.channelList.push(new String(channelID).valueOf())
+    this.channelList.push(new String(channelID).valueOf());
   }
 }
 
