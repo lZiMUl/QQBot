@@ -9,10 +9,7 @@ const cmd = new command_1.default();
 const controller = new controller_js_1.default();
 function bind(channelID) {
     const message = new message_js_1.default(channelID);
-    try {
-        message.sendMessage(`绑定成功, 当前频道号为 [${channelID}]`);
-    }
-    catch (e) { }
+    message.sendMessage(`绑定成功, 当前频道号为 [${channelID}]`);
     return message;
 }
 cmd.addCommandListener("绑定该频道", (_item, _length, root) => {

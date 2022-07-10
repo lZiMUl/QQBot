@@ -19,7 +19,7 @@ class Message {
     }
     async sendMessage(content) {
         try {
-            this.client.audioApi.postAudio(this.channelID, {
+            await this.client.audioApi.postAudio(this.channelID, {
                 audioUrl: "http://bing.com",
                 text: "nh",
                 status: 1,

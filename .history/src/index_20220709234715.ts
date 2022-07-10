@@ -9,7 +9,8 @@ const controller = new Controller();
 
 function bind(channelID: number): Message {
   const message = new Message(channelID);
-  message.sendMessage(`绑定成功, 当前频道号为 [${channelID}]`);
+
+    message.sendMessage(`绑定成功, 当前频道号为 [${channelID}]`);
   return message;
 }
 

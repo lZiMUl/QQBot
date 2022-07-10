@@ -9,11 +9,13 @@ const controller = new Controller();
 
 function bind(channelID: number): Message {
   const message = new Message(channelID);
-  message.sendMessage(`绑定成功, 当前频道号为 [${channelID}]`);
+  try {
+    message.sendMessage(`绑定成功, 当前频道号为 [${channelID}]`);
+  } catch (e) {}
   return message;
 }
 
-cmd.addCommandListener("绑定该频道", (_item, _length, root) => {
+cmd.addCommandListener("绑定该频道", async (_item, _length, root) => {
   const message = bind(new Number(root?.channel_id).valueOf());
   cmd.addCommandListener("发送消息", (item, length) => {
     message.sendMessage("发送成功");
