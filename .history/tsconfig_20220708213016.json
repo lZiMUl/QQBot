@@ -42,8 +42,10 @@
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
     "skipLibCheck": true,
-    "listEmittedFiles": true,
-    "listFiles": true
+    /** 
+    * "listEmittedFiles": true,
+    * "listFiles": true
+    */
   },
   "exclude": [
     "build",
