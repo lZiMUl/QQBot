@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const message_js_1 = tslib_1.__importDefault(require("./tool/message.js"));
-const controller_js_1 = tslib_1.__importDefault(require("./tool/controller.js"));
-const command_1 = tslib_1.__importDefault(require("./tool/command"));
+const message_js_1 = require("./tool/message.js");
+const controller_js_1 = require("./tool/controller.js");
+const command_1 = require("./tool/command");
 const console_1 = require("console");
 const cmd = new command_1.default();
 const controller = new controller_js_1.default();
